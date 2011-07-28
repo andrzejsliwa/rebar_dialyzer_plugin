@@ -35,5 +35,6 @@
 
 %%%.
 %%%'   PUBLIC API
+-spec dialyze(Config :: rebar_config:config(), AppFile :: file:filename()) -> ok.
 dialyze(_Config, _AppFile) ->
     io:format("from dialyze!!!.").
