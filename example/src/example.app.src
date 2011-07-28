@@ -1,0 +1,11 @@
+{application, example,
+ [
+  {description, "example of using rebar-dialyzer"},
+  {vsn, "0.0.1"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib
+                 ]},
+  {env, []}
+ ]}.
