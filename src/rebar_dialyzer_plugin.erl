@@ -1,8 +1,8 @@
 %%%'   HEADER
-%% @author    andrzej.sliwa@i-tool.eu
-%% @copyright 2011 Andrzej Sliwa
+%% @author Dave Smith <dizzyd@dizzyd.com>
 %%
-%% @doc rebar_dialyzer_plugin - rebar dialyzer plugin
+%% @doc rebar_dialyzer_plugin - rebar dialyzer plugin based on removed
+%% code from rebar.
 %%
 %% rebar_dialyzer_plugin is released under the MIT license.
 %%
@@ -26,6 +26,28 @@
 %% LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
 %% OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 %% WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+%%
+%% @doc rebar_dialyzer_plugin supports the following commands:
+%% <ul>
+%%   <li>dialyze (essentially "dialyzer ebin" or "dialyzer --src src")</li>
+%%   <li>build-plt (essentially "dialyzer --build_plt -r &lt;app_dirs&gt;")</li>
+%%   <li>check-plt (essentially "dialyzer --check_plt")</li>
+%% </ul>
+%% A single option <code>plt</code> can be presented in the
+%% <code>dialyzer_opts</code> options in <code>rebar.config</code>. If it
+%% is present, it is used as the PLT for the supported commands. Should it
+%% not be present, then the default is <code>$HOME/.dialyzer_plt</code> or
+%% <code>$REBAR_PLT_DIR/.dialyzer_plt</code> if $REBAR_PLT_DIR is defined.
+%%
+%% @reference <a href="http://user.it.uu.se/~kostis/Papers/bugs05.pdf">
+%% Experience from developing the Dialyzer: A static analysis tool detecting
+%% defects in Erlang applications</a>
+%% @reference <a href="http://user.it.uu.se/~kostis/Papers/contracts.pdf">
+%% A Language for Specifying Type Contracts in Erlang and its Interaction
+%% with Success Typings</a>
+%% @reference <a href="http://user.it.uu.se/~kostis/Papers/wrangler.pdf">Gradual
+%% Typing of Erlang Programs: A Wrangler Experience</a>
+%% @copyright 2010 Dave Smith
 %%
 %% @end
 -module(rebar_dialyzer_plugin).
