@@ -23,6 +23,14 @@ After removed dialyze from rebar I have backported original code made by Dave Sm
     {dialyzer_opts, [{plt, PltFile}, {warnings, [WarnOpts]}, src,
                      {excluded_apps, [ExclApps]}]}.
 
+## Usage (rebar):
+
+    $ ./rebar dialyze   # analyze with Dialyzer
+
+    $ ./rebar build-plt # build Dialyzer PLT
+
+    $ ./rebar check-plt # check Dialyzer PLT
+
 
 
 
