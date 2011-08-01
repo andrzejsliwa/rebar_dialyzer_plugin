@@ -1,6 +1,20 @@
+# Variables definitions:
+
+#  VAR= - variable definition ecursively expanded when the variable is used,
+#  not when it's declared
 REBAR =$(shell which rebar || echo ./rebar)
-ERL  ?= erl
-APP  := rebar-dialyzer
+
+#  VAR?= - conditional variable definition, assign only if not yet assigned.
+ERL ?= erl
+
+#  VAR:= - variable definition expanded when it's declared
+APP := rebar_dialyzer_plugin
+
+# Makefile targets format:
+#
+# 	target: dependencies
+# 	[tab] system command
+
 .PHONY: deps
 
 all: deps
