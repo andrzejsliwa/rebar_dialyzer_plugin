@@ -34,7 +34,7 @@
          'build-plt'/2,
          'check-plt'/2]).
 
--include("../deps/rebar/include/rebar.hrl").
+-include("rebar.hrl").
 
 -type warning() :: {atom(), {string(), integer()}, any()}.
 
