@@ -112,7 +112,7 @@ dialyze(Config, File) ->
 'build-plt'(Config, File) ->
     Plt = new_plt_path(Config, File),
 
-    Apps = rebar_app_utils:app_applications(Config, File),
+    {_, Apps} = rebar_app_utils:app_applications(Config, File),
 
     ?DEBUG("Build PLT ~s including following apps:~n~p~n", [Plt, Apps]),
     Warnings = dialyzer:run([{analysis_type, plt_build},
